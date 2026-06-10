@@ -7,14 +7,14 @@ function App() {
   const [name, setName] = useState("");
 
   useEffect(() => {
-    axios.get("http://ec2-35-154-145-151.ap-south-1.compute.amazonaws.com:3001/api/items")
+    axios.get("/api/items")
       .then(res => setItems(res.data));
   }, []);
 
   const addItem = async () => {
     if (!name.trim()) return;
-    await axios.post("http://ec2-35-154-145-151.ap-south-1.compute.amazonaws.com:3001/api/items", { name });
-    const res = await axios.get("http://ec2-35-154-145-151.ap-south-1.compute.amazonaws.com:3001/api/items");
+    await axios.post("/api/items", { name });
+    const res = await axios.get("/api/items");
     setItems(res.data);
     setName("");
   };

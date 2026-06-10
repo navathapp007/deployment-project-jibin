@@ -11,8 +11,8 @@ app.use(express.json());
 ========================= */
 const db = mysql.createConnection({
   host: "localhost",        // DB is on same EC2
-  user: "root",             // your MariaDB user
-  password: "admin",        // 🔥 replace with your actual password
+  user: "appuser",             // your MariaDB user
+  password: "admin123",        // 🔥 replace with your actual password
   database: "myapp"
 });
 
